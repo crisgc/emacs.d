@@ -62,6 +62,7 @@ Return a list of installed packages or nil for every skipped package."
  ;; https://is.gd/ZNEz1v
  'arduino-mode
  'company-c-headers
+ 'zenburn-theme
  )
 
 ;; (require 'elpy)
@@ -208,11 +209,14 @@ Return a list of installed packages or nil for every skipped package."
 ;; -----------------------------------------------
 
 
+;; Zenburn theme
+(load-theme 'zenburn t)
+
 ;; Habilita o scroll bar
 (scroll-bar-mode 1)
 
-
-
+;; Deleta para a lixeira
+(setq delete-by-moving-to-trash t)
 
 (provide 'init-local)
 ;;; init-local ends here
