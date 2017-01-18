@@ -46,7 +46,7 @@ Return a list of installed packages or nil for every skipped package."
 ;; Assuming you wish to install "iedit" and "magit"
 (ensure-package-installed
  'iedit
- ;; 'magit # Requer o emacs 24+
+ ;; 'magit # Requer o emacs 24.4+
  'evil
  'todotxt
  ;; 'elpy ;; Utilizando o anaconda-mode
@@ -62,6 +62,7 @@ Return a list of installed packages or nil for every skipped package."
  ;; https://is.gd/ZNEz1v
  'arduino-mode
  'company-c-headers
+ 'org-journal
  'zenburn-theme
  )
 
@@ -217,6 +218,11 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Deleta para a lixeira
 (setq delete-by-moving-to-trash t)
+
+;; Para journalling
+(require 'org-journal)
+(setq org-journal-dir "~/Documentos/journal/" )
+
 
 (provide 'init-local)
 ;;; init-local ends here
