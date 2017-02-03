@@ -63,6 +63,7 @@ Return a list of installed packages or nil for every skipped package."
  'arduino-mode
  'company-c-headers
  'org-journal
+ 'org-bullets
  'zenburn-theme
  )
 
@@ -211,7 +212,7 @@ Return a list of installed packages or nil for every skipped package."
 
 
 ;; Zenburn theme
-(load-theme 'zenburn t)
+;;(load-theme 'zenburn t)
 
 ;; Habilita o scroll bar
 (scroll-bar-mode 1)
@@ -223,6 +224,18 @@ Return a list of installed packages or nil for every skipped package."
 (require 'org-journal)
 (setq org-journal-dir "~/Documentos/journal/" )
 
+;; Orgmode bullets mais organizados
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; Syntax highlight dentro do source no org-mode
+(setq org-src-fontify-natively t)
 
 (provide 'init-local)
 ;;; init-local ends here
+
+(defun my-org-archive-done-tasks ()
+  (interactive)
+  (org-map-entries 'org-archive-subtree "/DONE" 'file))
+
+;; http://stackoverflow.com/questions/6997387/how-to-archive-all-the-done-tasks-using-a-single-command
