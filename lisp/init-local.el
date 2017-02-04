@@ -210,7 +210,6 @@ Return a list of installed packages or nil for every skipped package."
 ;;(semantic-mode 1)
 ;; -----------------------------------------------
 
-
 ;; Zenburn theme
 ;;(load-theme 'zenburn t)
 
@@ -238,4 +237,29 @@ Return a list of installed packages or nil for every skipped package."
   (interactive)
   (org-map-entries 'org-archive-subtree "/DONE" 'file))
 
+;; Randomize region
+(defun my-randomize-region (beg end)
+  "Randomize lines in region from BEG to END."
+  (interactive "*r")
+  (let ((lines (split-string
+                (delete-and-extract-region beg end) "\n")))
+    (when (string-equal "" (car (last lines 1)))
+      (setq lines (butlast lines 1)))
+    (apply 'insert
+           (mapcar 'cdr
+                   (sort (mapcar (lambda (x) (cons (random) (concat x "\n"))) lines)
+                         (lambda (a b) (< (car a) (car b))))))))
+
 ;; http://stackoverflow.com/questions/6997387/how-to-archive-all-the-done-tasks-using-a-single-command
+
+;; Configuraçoes para o auctex
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+(add-hook 'LaTeX-mode-hook 'visual-line-mode)
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
