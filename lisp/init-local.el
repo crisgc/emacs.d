@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+;;; (org-babel-load-file "~/.emacs.d/lisp/my-configuration.org")
+
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
