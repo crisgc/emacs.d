@@ -66,6 +66,7 @@ Return a list of installed packages or nil for every skipped package."
  'org-journal
  'org-bullets
  'zenburn-theme
+ 'synonyms
  )
 
 ;; (require 'elpy)
