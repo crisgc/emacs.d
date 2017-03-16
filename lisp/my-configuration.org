@@ -169,34 +169,6 @@ Return a list of installed packages or nil for every skipped package."
 
 ;; Google C style https://is.gd/2qFVTD
 (require 'google-c-style)
-;; ----------------------------
-
-;; Ipython como padrão (https://is.gd/ZNEz1v)
-;; use IPython
-;;use IPython
-(setq python-shell-interpreter "ipython"
-      python-shell-interpreter-args "--simple-prompt -i")
-
-;;(setq-default py-shell-name "ipython")
-;;(setq-default py-which-bufname "IPython")
-;;; use the wx backend, for both mayavi and matplotlib
-;;(setq py-python-command-args
-;;  '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
-;;(setq py-force-py-shell-name-p t)
-;;
-;;; switch to the interpreter after executing code
-;;(setq py-shell-switch-buffers-on-execute-p t)
-;;(setq py-switch-buffers-on-execute-p t)
-;;; don't split windows
-;;(setq py-split-windows-on-execute-p nil)
-;;; try to automagically figure out indentation
-;;(setq py-smart-indentation t)
-;; -----------------------------------------------
-
-;; Seta o default para ipython https://is.gd/UmHKa5
-                                        ; (when (executable-find "ipython")
-                                        ;  (setq python-shell-interpreter "ipython")
-;; -----------------------------
 
 ;; Header file completion https://is.gd/MiNN7W
 ;;(add-to-list 'company-backends 'company-c-headers)
@@ -275,3 +247,35 @@ seçao no org-mode
 #+END_SRC
 
 * Arquivamento de dones
+
+* Console Ipyhton
+#+BEGIN_SRC emacs-lisp
+  ;; ----------------------------
+
+  ;; Ipython como padrão (https://is.gd/ZNEz1v)
+  ;; use IPython
+  ;;use IPython
+  (setq python-shell-interpreter "ipython"
+python-shell-interpreter-args "--simple-prompt -i")
+
+  ;;(setq-default py-shell-name "ipython")
+  ;;(setq-default py-which-bufname "IPython")
+  ;;; use the wx backend, for both mayavi and matplotlib
+  (setq py-python-command-args
+    '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
+  ;;(setq py-force-py-shell-name-p t)
+  ;;
+  ;;; switch to the interpreter after executing code
+  ;;(setq py-shell-switch-buffers-on-execute-p t)
+  ;;(setq py-switch-buffers-on-execute-p t)
+  ;;; don't split windows
+  ;;(setq py-split-windows-on-execute-p nil)
+  ;;; try to automagically figure out indentation
+  (setq py-smart-indentation t)
+  ;; -----------------------------------------------
+
+  ;; Seta o default para ipython https://is.gd/UmHKa5
+                                          ; (when (executable-find "ipython")
+                                          ;  (setq python-shell-interpreter "ipython")
+  ;; -----------------------------
+#+END_SRC
