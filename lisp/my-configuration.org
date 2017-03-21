@@ -279,3 +279,11 @@ python-shell-interpreter-args "--simple-prompt -i")
                                           ;  (setq python-shell-interpreter "ipython")
   ;; -----------------------------
 #+END_SRC
+* Display
+
+Utilizando uma seta em vez da reticências para itens ocultos por um
+cabeçalho no .org.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-ellipsis "⤵")
+#+END_SRC
