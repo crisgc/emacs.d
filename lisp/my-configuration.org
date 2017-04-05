@@ -287,3 +287,8 @@ cabeçalho no .org.
 #+BEGIN_SRC emacs-lisp
   (setq org-ellipsis "⤵")
 #+END_SRC
+* Para aceitar acentos
+
+#+BEGIN_SRC emacs-lisp
+  (require 'iso-transl)
+#+END_SRC
